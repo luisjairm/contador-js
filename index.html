@@ -13,15 +13,16 @@
   <header class="container-md p-5">
     <div class="row pt-5">
       <h1 class="text-center pb-5 pt-5">Contador con JavaScript</h1>
-    <!-- <button type="button" class="btn btn-success">Nuevo Contador</button> -->
+      <button id="nuevo-contador" type="button" class="btn btn-success">Nuevo Contador</button> 
     </div>
   </header>
 
-  <main class="container-md">
-    <div class="row">
+  <main id="contenedor" class="container-md">
+    <div  class="row">
+
       <div class="col-sm">
-        <div class="card w-100 card-border mb-5">
-          <button type="button" class="btn btn-danger"></button>
+        <div class="card w-100 card-border mb-5 contador" id="contador" data-id="0">
+          <button type="button" class="btn btn-danger cerrar">X</button>
           <p id="card-value" class="card-text text-center h1" >0</p>
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-outline-warning text-center dism" >Disminuir -1</button>
@@ -30,6 +31,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </main>
 

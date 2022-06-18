@@ -1,27 +1,79 @@
 // Variables
-const buttons = document.querySelector('.btn-group')
+const contadores = document.querySelector('#contenedor')
 const cardValue = document.querySelector('#card-value')
+const nuevoContador = document.querySelector('#nuevo-contador')
 
+const container = document.querySelector('main div.row')
+
+let cont = 1;
+let arrCont = []
 
 // Eventos
 escuchaEventos();
 function escuchaEventos(){
-    buttons.addEventListener('click', botonesAccion)
+    contadores.addEventListener('click', botonesAccion)
+
+    nuevoContador.addEventListener('click', generaContador)
+}
+
+function generaContador(){
+    const card = document.createElement('div')
+    card.classList.add('col-sm')
+
+    card.innerHTML = `
+    <div class="card w-100 card-border mb-5 contador" id="contador" data-id="${cont}">
+        <button type="button" class="btn btn-danger cerrar">X</button>
+        <p id="card-value" class="card-text text-center h1" >0</p>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-outline-warning text-center dism" >Disminuir -1</button>
+            <button type="button" class="btn btn-outline-danger text-center reset" >Resetear </button>
+            <button type="button" class="btn btn-outline-success aument text-center" >Aumentar +1 </button>
+        </div>
+    </div>
+    `
+    cont++
+   
+    container.appendChild(card)
 }
 
 function botonesAccion(e){
+    const contador = e.target.parentElement.parentElement
+    
     if(e.target.classList.contains('dism')){
-        let value = parseInt(cardValue.textContent)
-        value--
-        cardValue.textContent = value
-    }
-    if(e.target.classList.contains('reset')){
+            disminuir( contador )
+        }
+    
+        if(e.target.classList.contains('reset')){
+            // const contador = e.target.parentElement.parentElement
+            reset( contador )
+        }
+    
+        if(e.target.classList.contains('aument')){
+            // const contador = e.target.parentElement.parentElement
+            aumentar( contador )
+        }
         
-        cardValue.textContent = 0
-    }
-    if(e.target.classList.contains('aument')){
-        let value = parseInt(cardValue.textContent)
-        value++
-        cardValue.textContent = value
-    }
+        if(e.target.classList.contains('cerrar')){
+            const card = e.target.parentElement.parentElement
+            contador.parentElement.removeChild(card)
+            
+        }
 }
+
+function disminuir( contador ){
+    
+    let valor = parseInt(contador.querySelector('#card-value').textContent)
+    valor--
+    contador.querySelector('#card-value').textContent = valor
+}
+function reset( contador ){
+ 
+    contador.querySelector('#card-value').textContent = '0'
+
+}
+function aumentar( contador ){
+    let valor = parseInt(contador.querySelector('#card-value').textContent)
+    valor++
+    contador.querySelector('#card-value').textContent = valor
+}
+
