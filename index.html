@@ -33,20 +33,24 @@
 </nav>
 
 
-  <header class="container-md p-5">
-    <div class="row pt-2">
-      <h1 class="text-center pb-5 pt-1">Contador con JavaScript</h1>
-      <button id="nuevo-contador" type="button" class="btn btn-success">Nuevo Contador</button> 
+  <header class="container-md mt-3 mb-3">
+    <div class="row justify-content-center">
+      <h1 class="text-center pb-3 pt-1 font-weight-bold col-auto">Contador con JavaScript</h1> 
+    </div>
+    <div class="row justify-content-center">
+      <button id="nuevo-contador" type="button" class="btn btn-success  font-weight-bold col-auto border">Nuevo Contador</button>
     </div>
   </header>
 
+  <!-- Contenedor para los contadores -->
   <main id="contenedor" class="container-md">
     <div  class="row">
-
+      <!-- Contenedor principal -->
       <div class="col-sm">
-        <div class="card w-100 card-border mb-5 contador" id="contador" data-id="0">
+        <div class="card w-100 card-border mb-5">
           <button type="button" class="btn btn-danger cerrar">X</button>
           <p id="card-value" class="card-text text-center h1" >0</p>
+          <!-- Botones -->
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-outline-warning text-center dism" >Disminuir -1</button>
             <button type="button" class="btn btn-outline-danger text-center reset" >Resetear </button>

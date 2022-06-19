@@ -2,7 +2,6 @@
 
 Multiples contadores usando JavaScript y Bootstrap
 
+[ContadorJS](https://conter-js.netlify.app)
 
-By:[ContadorJS](https://conter-js.netlify.app?target=_blank)
-
-By:[@luisjairm](https://twitter.com/luisjairm_?target=_blank)
+By:[@luisjairm](https://twitter.com/luisjairm_)
